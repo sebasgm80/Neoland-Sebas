@@ -1,0 +1,51 @@
+#logo {
+   width: 600px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 30px
+}
+nav{
+    background-color: rgb(185, 192, 210);
+    border-style: solid;
+    border-color: rgb(7, 62, 49);
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgb(185, 192, 210), rgb(93, 142, 130));
+}
+p{
+    font-size: 20px;
+}
+.lista{
+    color: black;
+    font-size: 20px;
+    
+}
+.img{
+   width: 600px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 20px;
+   border-style: solid;
+   border-color: rgb(7, 62, 49);
+   border-radius: 20px;
+
+}
+footer{
+    text-align: center;
+    font-size: larger;
+
+}
+h2{
+    font-size: 50px;
+    text-align: center;
+    color: rgb(7, 62, 49);
+
+}
+footer{
+    background-color: rgb(185, 192, 210);
+    border-style: solid;
+    border-color: rgb(7, 62, 49);
+    border-radius: 20px
+    
+}
