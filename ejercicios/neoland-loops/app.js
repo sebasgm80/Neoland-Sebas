@@ -1,14 +1,4 @@
-// Iteración #1: Buscar el máximo
+// Iteración #1: Usa includes
 
-function sum(numberOne , numberTwo) {
-    // insert code
-}
+const products = ['Camiseta de Pokemon', 'Pantalón coquinero', 'Gorra de gansta', 'Camiseta de Basket', 'Cinrurón de Orión', 'AC/DC Camiseta']
 
-// Iteración #2: Buscar la palabra más larga
-
-const avengers = ['Hulk', 'Thor', 'IronMan', 'Captain A.', 'Spiderman', 'Captain M.'];
-function findLongestWord(param) {
-  // insert code
-}
-
-// Iteración #3: Calcular la suma

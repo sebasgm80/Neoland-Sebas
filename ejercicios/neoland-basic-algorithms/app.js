@@ -121,10 +121,10 @@ if (number2 / number2 === number1, number1 / 5 === number3) {
 } */
 
 //1,3
-for (let i = 0; i <= 10; i++) {
+/* for (let i = 0; i <= 10; i++) {
     if (i === 10) {
         console.log("Dormido");
     } else {
         console.log("Intentando dormir");
     }
-}
+} */
