@@ -120,25 +120,14 @@ console.log(finderName(nameFinder)); */
   'code'
 ];
 
-function repeatCounter(param) {
-  const wordCounts = {};
-
-  for (const word of param) {
-    wordCounts[word] = wordCounts[word] ? wordCounts[word] + 1 : 1;
-  }
-
-  return wordCounts;
+function wordCounter(param) {
+  return param.reduce((acc, el) => {
+    if (acc[el]) {
+      acc[el]++;
+    } else {
+      acc[el] = 1;
+    }
+    return acc;
+  }, {});
 }
-
-const result = repeatCounter(counterWords);
-
-console.log(result); */
-
-
-let transporte = ["casa", "arbol", "puerta"]
-transporte.forEach(
-  function (transporte) {
-    transporte.toUpperCase();
-  }
-)
-console.log(transporte.forEach(transporte));
+console.log(wordCounter(counterWords)); */
