@@ -123,10 +123,10 @@ console.log(rollDice(6));
 console.log(rollDice(24)); */
 
 // Iteración #6: Función swap
-function swap(array, index1, index2) {
+/* function swap(array, index1, index2) {
   [array[index1], array[index2]] = [array[index2], array[index1]];
   return array;
 }
 const myArray = ['Mesirve', 'Cristiano Romualdo', 'Fernando Muralla', 'Ronalguiño'];
-console.log(swap(myArray, 1, 3)); 
+console.log(swap(myArray, 1, 3));  */
 
