@@ -4,11 +4,23 @@
 */
 let array = [{
     id: 1,
-    na,e: "Nicolas",
+    name: "Nicolas",
 }, {
     id: 2,
-    na,e: "Nicolas",
+    name: "Nicolas",
 }, {
-    id: 1,
-    na,e: "Nicolas",
+    id: 3,
+    name: "Nicolas",
 }];
+
+function toPairs(arr) {
+    let pairs = [];
+    for (idx in arr) {
+        let elemento = arr[idx];
+        pairs[idx] = [elemento.id, elemento];
+    }
+    return pairs;
+}
+
+let resultado = toPairs(array);
+console.log(resultado);
