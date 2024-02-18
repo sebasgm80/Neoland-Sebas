@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cajones</title>
+    <link rel="stylesheet" href="cajon.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CAJONES</h1>
+        <p>Introduce todas las medidas en milimetros, medidas para guias Blum Tandem</p>
+        <ul class="form">
+            <li><p class="largo">Largo</p><form><input type="number" id="largo"></form></li>
+            <li><p class="altura">Altura</p><form><input type="number" id="altura"></form></li>
+            <li><p class="profundidad">Profundidad</p><form><input type="number" id="profundidad"></form></li>
+            <li><p class="montantes">Grueso travesaños</p><form><input type="number" id="laterales"></form></li>
+            <li><p class="fondo">Grueso fondo</p><form><input type="number" id="fondo"></form></li>
+            <li><p class="cajones">Numero de cajones</p><form><input type="number" id="cajones"></form></li>
+        </ul>
+        <button onclick="calcular()">Calcular</button>
+    </div>
+    <script src="cajon.js"></script>
+</body>
+</html>
