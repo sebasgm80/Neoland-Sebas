@@ -21,12 +21,13 @@ function calcular() {
     console.log("Numero de cajones:", cajones);
 
     let largoCalculado1 = parseInt(largo) - 42; //medida de largo del frente
-    let alturaCalculada1 = (parseInt(altura) / (parseInt(cajones)) - 25);// medida altura del lateral de los cajones centrales
-    let alturaCalculada2 = (alturaCalculada1 - parseInt(fondo))-parseInt(laterales);// medida de altura del frente centrales
+    let alturaCalculada1 = (parseInt(altura) - 25);// medida altura del lateral de los cajones 
+    let alturaCalculada2 = (alturaCalculada1 - parseInt(fondo));// medida de altura del frente 
     let lateralCalculado1 =((parseInt(profundidad))-10)-((parseInt(profundidad)-10)%(50));// medida de largo de las guias
-    let numeroFrentes = parseInt(cajones)*2//numero de cajones
-    let gruesoTravesaños = parseInt(laterales)//grueso de los travesanos
-    
+    let numeroFrentes = parseInt(cajones)*2;//numero de cajones
+    let gruesoTravesaños = parseInt(laterales);//grueso de los travesanos
+    let gruesoFondo = parseInt(fondo);//grueso del fondo
+    let anchoFondo = largoCalculado1 - 16;//ancho trasera
 
 
 
@@ -37,11 +38,14 @@ function calcular() {
     console.log("lateral calculado:", lateralCalculado1);
     console.log("numero de frentes:", numeroFrentes);
     console.log("grueso de travesanos:", gruesoTravesaños);
+    console.log("grueso de fondo:", gruesoFondo);
+    console.log("ancho del fondo:", anchoFondo);
 
     
 
     // Mostrar resultados en el HTML
-    mostrarResultado("Frentes",numeroFrentes, (largoCalculado1 - gruesoTravesaños), (alturaCalculada2 - gruesoTravesaños));
+    mostrarResultado("Frentes",numeroFrentes, largoCalculado1, alturaCalculada2 );
     mostrarResultado("Laterales", numeroFrentes, (lateralCalculado1 - 10), (alturaCalculada1));
-}
+    mostrarResultado("Trasera", numeroFrentes / 2, anchoFondo, lateralCalculado1-10);
+}   
 

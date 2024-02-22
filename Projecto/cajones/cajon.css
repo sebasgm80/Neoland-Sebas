@@ -3,6 +3,10 @@
     font-family: Arial, Helvetica, sans-serif
 }
 
+.container {
+    text-align: center;
+}
+
 h1 {
     text-align: center;
     font-size: 50px;
@@ -13,14 +17,11 @@ p {
 }
 
 body {
-    overflow: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-
+    
 }
 
 .form {
@@ -34,13 +35,7 @@ body {
     gap: 10px;
 }
 
-.dibujo {
-    background-color: bisque;
-    padding: 80px;
-    padding-top: 20px;
-    margin: 20px;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-
