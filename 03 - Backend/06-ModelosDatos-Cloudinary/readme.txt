@@ -1,0 +1,17 @@
+- Installs -
+
+npm init -y
+npm i express
+npm i dotenv
+npm i mongoose
+npm i nodemon -D
+npm i cloudinary
+npm i multer
+npm i multer-storage-cloudinary
+
+- Scripts Package.json -
+
+"start": "node. index.js"
+"dev": "nodemon index.js"
+
+
