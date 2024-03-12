@@ -1,0 +1,33 @@
+- Installs -
+
+npm init -y
+npm i bcrypt
+npm i eslint
+npm i eslint-config-prettier
+npm i eslint-plugin-prettier
+npm i jsonwebtoken
+npm i nodemailer
+npm i prettier
+npm i validator
+npm i express
+npm i dotenv
+npm i cors
+npm i mongoose
+npm i nodemon -D
+npm i multer-storage-cloudinary
+npm i multer
+npm i cloudinary
+
+
+- Scripts Package.json -
+
+{
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint ./src ./index.js",
+    "lint:fix": "eslint --fix ./src ./index.js",
+    "format": "prettier --check --ignore-path .gitignore ./src ./index.js",
+    "format_fix": "prettier --write --ignore-path .gitignore ./src ./index.js"
+  },
+
+

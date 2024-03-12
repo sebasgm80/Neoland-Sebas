@@ -1,0 +1,16 @@
+--Installs--
+
+npm init -y
+npm i express
+npm i dotenv
+npm i nodemon -D
+
+--Scripts--
+
+{
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+
+--Keywords--
+

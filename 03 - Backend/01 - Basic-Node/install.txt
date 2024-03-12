@@ -1,0 +1,19 @@
+--Installs--
+
+npm init -y
+npm i fs
+
+--Scripts--
+
+{
+    "write": "node write.js",
+    "read": "node read.js"
+  },
+
+--Keywords--
+
+[
+    "json",
+    "readJson",
+    "writeJson"
+  ],

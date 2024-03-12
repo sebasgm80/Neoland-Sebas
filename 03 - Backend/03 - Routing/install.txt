@@ -1,0 +1,14 @@
+--Installs--
+
+npm init -y
+npm i nodemon -D
+
+--Scripts--
+
+{
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+
+--Keywords--
+

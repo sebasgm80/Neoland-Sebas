@@ -8,7 +8,7 @@ dotenv.config();
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'ejercicioSeis',
+    folder: 'seeds',
     allowedFormats: ['jpg', 'png', 'jpeg', 'gif', 'svg', 'webp'],
   },
 });
