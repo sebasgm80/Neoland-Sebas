@@ -1,0 +1,25 @@
+- Installs -
+
+npm init -y
+npm i bcrypt
+npm i express
+npm i dotenv
+npm i cors
+npm i nodemailer
+npm i validator
+npm i mongoose
+npm i nodemon -D
+npm i jsonwebtoken
+npm i multer-storage-cloudinary
+npm i multer
+npm i cloudinary
+
+
+- Scripts Package.json -
+
+{
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+
+

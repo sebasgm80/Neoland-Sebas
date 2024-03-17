@@ -31,11 +31,8 @@ app.use(express.urlencoded({limit: "5mb", extended:false}));
 
 //! --- RUTAS
 
-const CharacterRoutes = require("./src/api/routes/Character.routes");
-app.use("/api/v1/characters/", CharacterRoutes)
-
-const MovieRoutes = require("./src/api/routes/Movie.routes");
-app.use("/api/v1/movies/", MovieRoutes)
+const UserRoutes = require("./src/api/routes/User.routes");
+app.use("/api/v1/users", UserRoutes);
 
 //! --- ERROR 404 ---> no se encuentra una ruta ---> error de USER o CLIENTE
 
