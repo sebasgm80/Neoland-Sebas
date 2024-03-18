@@ -1,7 +1,7 @@
 const {
   createCompany,
   toggleCar,
-  deleteCompany,
+  deleteCompany
 } = require("../controllers/Company.controllers");
 
 const CompanyRoutes = require("express").Router();

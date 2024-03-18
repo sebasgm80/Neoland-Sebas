@@ -137,7 +137,6 @@ const toggleCar = async (req, res, next) => {
   }
 };
 
-// Delete company
 const deleteCompany = async (req, res, next) => {
   try {
     // Se extrae el ID de la compañía de los parámetros de la solicitud
@@ -161,8 +160,6 @@ const deleteCompany = async (req, res, next) => {
     });
   }
 };
-
-
 
 
 module.exports = { createCompany, toggleCar, deleteCompany };

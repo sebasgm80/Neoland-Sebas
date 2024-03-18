@@ -14,75 +14,46 @@ const User = require("../models/User.model");
 //! ---------------------------------------------------------------------
 
 const create = async (req, res, next) => {
-  /// vamos a capturar la url dde la imagen que se sube a cloudinary
-  /* lo hacemos porque si hay en error como la imagen see sube antes de meternos al controlador
-    si hay un error en el controlador, una vez dentro, el elemento no se crea y por ende
-    tenmos que borrar la imagen en cloudinary */
-
-  /** El optional chaining se pone porque la imagen no es obligatoria por lo cual
-   * puede ser que no tengamos req.file.path
-   */
+  // Capturar la URL de la imagen que se sube a Cloudinary
   let catchImg = req.file?.path;
-  try {
-    //! -----> ACTUALIZAR INDEXES
-    /** los indexes se forman cuando una clave del objeto es unique, se puede ver en la
-     * parte de mongo que esta al lado de find
-     *
-     * Esto es importante porque puede que haya modificado el modelo posteriormente a la
-     * creacion del controlador
-     */
 
+  try {
+    // Actualizar los índices de la colección Car
     await Car.syncIndexes();
-    //! ------> INSTANCIAR UN NUEVO CAR
-    /** vamos a instanciar un nuevo car y le metemos como info incial lo que recibimos
-     * por la req.body
-     */
+
+    // Instanciar un nuevo objeto Car con los datos recibidos en la solicitud
     const newCar = new Car(req.body);
 
-    //! -------> VALORAR SI HEMOS RECIBIDO UNA IMAGEN O NO
-    /** Si recibimos la imagen tenemos que meter la url en el objeto creado arriba con la
-     * nueva instancia del Car
-     */
-
+    // Verificar si se recibió una imagen y asignar la URL al campo image del nuevo objeto Car
     if (req.file) {
       newCar.image = catchImg;
     } else {
-      newCar.image =
-        "https://res.cloudinary.com/dhkbe6djz/image/upload/v1689099748/UserFTProyect/tntqqfidpsmcmqdhuevb.png";
+      // Si no se recibió una imagen, asignar una imagen por defecto
+      newCar.image = "https://res.cloudinary.com/dsurhcayl/image/upload/v1710525755/NoImage_ulnz0i.jpg";
     }
 
     try {
-      //! ------------> VAMOS A GUARDAR LA INSTANCIA DEL NUEVO CAR
+      // Guardar la instancia del nuevo objeto Car en la base de datos
       const saveCar = await newCar.save();
-      if (saveCar) {
-        /** Si existe vamos a enviar un 200 como que todo esta ok y le enviamos con un json
-         * el objeto creado
-         */
 
-        return res.status(200).json(saveCar);
+      // Verificar si se guardó correctamente y enviar una respuesta adecuada
+      if (saveCar) {
+        return res.status(200).json(saveCar); // Devolver el objeto guardado con código de estado 200
       } else {
-        return res
-          .status(404)
-          .json("No se ha podido guardar el elemento en la DB ❌");
+        return res.status(404).json("No se ha podido guardar el elemento en la DB ❌"); // Mensaje de error si no se guardó correctamente
       }
     } catch (error) {
-      return res.status(404).json("error general saved car");
+      return res.status(404).json("Error al guardar el coche en la base de datos"); // Error al guardar el coche en la base de datos
     }
   } catch (error) {
-    //! -----> solo entramos aqui en el catch cuando ha habido un error
-    /** SI HA HABIDO UN ERROR -----
-     * Tenemos que borrar la imagen en cloudinary porque se sube antes de que nos metamos en
-     * el controlador---> porque es un middleware que esta entre la peticion del cliente y el controlador
-     */
-
+    // Si hubo un error, borrar la imagen en Cloudinary (si existe)
     req.file?.path && deleteImgCloudinary(catchImg);
 
-    return (
-      res.status(404).json({
-        messege: "error en el creado del elemento",
-        error: error,
-      }) && next(error)
-    );
+    // Devolver el error y mensaje correspondiente
+    return res.status(404).json({
+      messege: "Error en la creación del elemento",
+      error: error,
+    }) && next(error);
   }
 };
 
@@ -164,9 +135,12 @@ const update = async (req, res, next) => {
         name: req.body?.name ? req.body?.name : carById.name,
       };
 
-      if (req.body?.type) {
-        const resultEnum = enumOk(req.body?.type);
-        customBody.type = resultEnum.check
+      if (req.body?.fuel || req.body?.type) {
+        const resultEnum = enumOk(req.body?.fuel, req.body?.type);
+        customBody.fuel = resultEnum.check
+          ? req.body?.fuel
+          : carById.fuel;
+          customBody.type = resultEnum.check
           ? req.body?.type
           : carById.type;
       }
