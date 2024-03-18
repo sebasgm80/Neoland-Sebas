@@ -65,7 +65,7 @@ const registerLargo = async (req, res, next) => {
       if (req.file) {
         newUser.image = req.file.path;
       } else {
-        newUser.image = "https://pic.onlinewebfonts.com/svg/img_181369.png";
+        newUser.image = "https://res.cloudinary.com/dsurhcayl/image/upload/v1710774361/profile_jnl9rs.jpg";
       }
 
       ///! SI HAY UNA NUEVA ASINCRONIA DE CREAR O ACTUALIZAR HAY QUE METER OTRO TRY CATCH
@@ -341,7 +341,7 @@ const checkNewUser = async (req, res, next) => {
 
     if (!userExists) {
       //!No existe----> 404 de no se encuentra
-      return res.status(404).json("User not found");
+      return res.status(404).json("Usuario no existe");
     } else {
       // cogemos que comparamos que el codigo que recibimos por la req.body y el del userExists es igual
       if (confirmationCode === userExists.confirmationCode) {
@@ -496,7 +496,7 @@ const sendPassword = async (req, res, next) => {
       from: email,
       to: userDb.email,
       subject: "-----",
-      text: `User: ${userDb.name}. Your new code login is ${passwordSecure} Hemos enviado esto porque tenemos una solicitud de cambio de contraseña, si no has sido ponte en contacto con nosotros, gracias.`,
+      text: `Hola ${userDb.name}. Su nueva contrasenya es ${passwordSecure} Hemos recibido esta peticion para cambiar su contrasenya. En caso de que no sea usted el que no ha realizado esta peticion, ponga en contacto con nosotros.`,
     };
     transporter.sendMail(mailOptions, async function (error, info) {
       if (error) {
@@ -635,10 +635,10 @@ const update = async (req, res, next) => {
     patchUser.email = req.user.email;
     patchUser.check = req.user.check;
 
-    if (req.body?.fuel) {
+    if (req.body?.gender) {
       // lo comprobamos y lo metermos en patchUser con un ternario en caso de que sea true o false el resultado de la funcion
-      const resultEnum = enumOk(req.body?.fuel);
-      patchUser.fuel = resultEnum.check ? req.body?.fuel : req.user.fuel;
+      const resultEnum = enumOk(req.body?.gender);
+      patchUser.gender = resultEnum.check ? req.body?.gender : req.user.gender;
     }
 
     try {
@@ -735,10 +735,10 @@ const deleteUser = async (req, res, next) => {
     await User.findByIdAndDelete(_id);
     if (await User.findById(_id)) {
       // si el usuario
-      return res.status(404).json("not deleted"); ///
+      return res.status(404).json("Usuario no eliminado"); 
     } else {
       deleteImgCloudinary(image);
-      return res.status(200).json("ok delete");
+      return res.status(200).json("Usuario eliminado");
     }
   } catch (error) {
     return next(error);

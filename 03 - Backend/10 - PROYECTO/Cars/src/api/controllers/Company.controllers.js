@@ -137,4 +137,32 @@ const toggleCar = async (req, res, next) => {
   }
 };
 
-module.exports = { createCompany, toggleCar };
+// Delete company
+const deleteCompany = async (req, res, next) => {
+  try {
+    // Se extrae el ID de la compañía de los parámetros de la solicitud
+    const { id } = req.params;
+    
+    // Se intenta eliminar la compañía utilizando el método findByIdAndDelete de Mongoose
+    const deletedCompany = await Company.findByIdAndDelete(id);
+    
+    // Si la compañía se elimina con éxito, se devuelve un mensaje indicando que se ha eliminado correctamente junto con los datos de la compañía eliminada
+    if (deletedCompany) {
+      return res.status(200).json({ message: "La compañía se ha eliminado correctamente", deletedCompany });
+    } else {
+      // Si la compañía no existe, se devuelve un mensaje indicando que la compañía no existe
+      return res.status(404).json({ message: "La compañía no existe" });
+    }
+  } catch (error) {
+    // Si ocurre algún error durante el proceso de eliminación, se devuelve un mensaje de error con el código de estado 500
+    return res.status(500).json({
+      error: "Error al eliminar la compañía",
+      message: error.message,
+    });
+  }
+};
+
+
+
+
+module.exports = { createCompany, toggleCar, deleteCompany };
