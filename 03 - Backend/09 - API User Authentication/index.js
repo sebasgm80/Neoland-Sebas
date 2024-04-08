@@ -9,7 +9,7 @@ dotenv.config();
 const { connect } = require("./src/utils/db");
 connect();
 
-//! --- CONFIGURACION DE CLOUDINARY
+//! --- CONFIGURACION DE CLOUDINARY      
 
 const { configCloudinary } = require("./src/middleware/files.middleware");
 configCloudinary();

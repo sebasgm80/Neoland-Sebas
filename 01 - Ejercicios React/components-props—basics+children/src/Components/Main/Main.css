@@ -1,0 +1,9 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(241, 226, 207, 0.711);
+    min-height: 70vh;
+
+}

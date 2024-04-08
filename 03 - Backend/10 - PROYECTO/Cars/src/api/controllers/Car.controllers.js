@@ -135,14 +135,11 @@ const update = async (req, res, next) => {
         name: req.body?.name ? req.body?.name : carById.name,
       };
 
-      if (req.body?.fuel || req.body?.type) {
-        const resultEnum = enumOk(req.body?.fuel, req.body?.type);
+      if (req.body?.fuel) {
+        const resultEnum = enumOk(req.body?.fuel);
         customBody.fuel = resultEnum.check
           ? req.body?.fuel
           : carById.fuel;
-          customBody.type = resultEnum.check
-          ? req.body?.type
-          : carById.type;
       }
 
       try {
@@ -210,6 +207,10 @@ const update = async (req, res, next) => {
     return res.status(404).json(error);
   }
 };
+
+
+
+
 
 //! ---------------------------------------------------------------------
 //? -------------------------------DELETE -------------------------------

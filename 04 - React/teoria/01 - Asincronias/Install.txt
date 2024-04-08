@@ -1,0 +1,5 @@
+- Installs -
+
+npm create vite@latest proyecto
+npm install
+npm run dev

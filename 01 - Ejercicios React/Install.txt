@@ -1,0 +1,6 @@
+- Installs -
+
+npm create vite@latest proyecto
+npm i react-ruter.dom
+npm install
+npm run dev
