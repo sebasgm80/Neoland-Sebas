@@ -1,0 +1,18 @@
+
+
+footer {
+    display: flex; 
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    background: #c2d287;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    z-index: 999;
+    margin-top: 2rem;
+    
+    border-radius: 1rem;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+    
+}
