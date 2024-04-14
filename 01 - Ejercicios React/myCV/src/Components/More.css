@@ -1,0 +1,34 @@
+.more {
+  margin-top: 20px;
+  
+}
+
+.more h2 {
+  margin-bottom: 10px;
+}
+
+.more > * {
+  margin-bottom: 20px;
+}
+
+.more .card {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ebe5bf;
+}
+
+.more .card h3 {
+  margin-top: 0;
+}
+
+.more .card p {
+  margin-bottom: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
