@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    
+
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eceed4;
+    margin: 2rem;
+    bottom: 0px;
+}
