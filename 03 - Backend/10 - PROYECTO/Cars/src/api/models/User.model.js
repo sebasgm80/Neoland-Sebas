@@ -47,7 +47,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
     },
     CompanyFav: [{ type: mongoose.Schema.Types.ObjectId, ref: "Company" }],
-    charactersFav: [{ type: mongoose.Schema.Types.ObjectId, ref: "Character" }],
+    carFav: [{ type: mongoose.Schema.Types.ObjectId, ref: "Character" }],
     followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     followed: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     chats: [{ type: mongoose.Schema.Types.ObjectId, ref: "Chat" }],

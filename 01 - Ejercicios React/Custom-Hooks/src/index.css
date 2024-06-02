@@ -28,7 +28,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #21273a;
 }
 
 h1 {
@@ -57,13 +56,13 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #a3189f;
-    background-color: #f1d5ff;
+    color: #213547;
+    background-color: #ffffff;
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #b163ba;
+    background-color: #f9f9f9;
   }
 }

@@ -1,12 +1,17 @@
-import { useState } from 'react'
 import './App.css'
+import { Stopwatch } from './componets'
+import { Countdown } from './componets/CountDownDate/CountDownDate'
+import { DigitalClock } from './componets/DigitalClock/DigitalClock'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      <h1>Reloj</h1>
+      <DigitalClock  className="clock-container"/>
+      <Countdown  className="countdown"/>
+      <Stopwatch  className="stopwatch"/>
     </>
   )
 }
