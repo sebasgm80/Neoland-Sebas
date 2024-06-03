@@ -30,7 +30,7 @@ function App() {
       setApod(data.data);
     };
     getApod();
-  }, [date]);
+  }, [date, NASA_API_KEY, NASA_URL]);
 
   //Crearemos una función que setee la fecha a través de un input en el formato
   //necesario (igual que el formato de today)
